@@ -9,11 +9,17 @@ const config = allConfig[env];
 
 const db = {};
 
-let sequelize = new Sequelize(config.database, config.username, config.password, config);
+let sequelize;
 
-db.Item = itemModel(sequelize, Sequelize.DataTypes);
+if( env === 'production' ){
+  sequelize = new Sequelize(process.env.DATABASE_URL, config);
+}else{
+  sequelize = new Sequelize(config.database, config.username, config.password, config);
+}
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
+
+db.Item = itemModel(sequelize, Sequelize.DataTypes);
 
 export default db;
