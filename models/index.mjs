@@ -2,8 +2,6 @@ import { Sequelize } from 'sequelize';
 import allConfig from '../config/config.js';
 import url from 'url';
 
-import itemModel from './item.mjs';
-
 const env = process.env.NODE_ENV || 'development';
 
 const config = allConfig[env];
@@ -13,6 +11,8 @@ const db = {};
 let sequelize;
 
 if( env === 'production' ){
+
+  // break apart the Heroku database url and rebuild the configs we need
 
   const DATABASE_URL = process.env.DATABASE_URL;
   const db_url = url.parse(DATABASE_URL);
@@ -33,7 +33,5 @@ if( env === 'production' ){
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
-
-db.Item = itemModel(sequelize, Sequelize.DataTypes);
 
 export default db;

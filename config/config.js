@@ -1,8 +1,8 @@
 module.exports = {
   development: {
-    username: 'akira',
+    username: '<YOUR_USER_NAME>',
     password: null,
-    database: 'aecom_development',
+    database: '<YOUR_APP_NAME>_development',
     host: '127.0.0.1',
     dialect: 'postgres',
   },
