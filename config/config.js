@@ -7,6 +7,7 @@ module.exports = {
     dialect: 'postgres',
   },
   production: {
+    use_env_variable: "HELLO",
     dialect: 'postgres',
     protocol: 'postgres',
     dialectOptions: {
