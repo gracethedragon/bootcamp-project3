@@ -7,7 +7,8 @@ module.exports = {
     dialect: 'postgres',
   },
   production: {
-    database: 'gosh_dang_matter_flipping',
+    dialect: 'postgres',
+    protocol: 'postgres',
     dialectOptions: {
       ssl: { // https://github.com/sequelize/sequelize/issues/12083
         require: true,
