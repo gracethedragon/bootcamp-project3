@@ -1,5 +1,5 @@
 {
-  "name": "full-stack-modal-swe1",
+  "name": "webpack-mvc-base-swe1",
   "version": "1.0.0",
   "description": "",
   "main": ".eslintrc.js",
@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rocketacademy/full-stack-modal-swe1.git"
+    "url": "git+https://github.com/rocketacademy/webpack-mvc-base-swe1.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/rocketacademy/full-stack-modal-swe1/issues"
+    "url": "https://github.com/rocketacademy/webpack-mvc-base-swe1/issues"
   },
-  "homepage": "https://github.com/rocketacademy/full-stack-modal-swe1#readme",
+  "homepage": "https://github.com/rocketacademy/webpack-mvc-base-swe1#readme",
   "devDependencies": {
     "@babel/core": "^7.12.10",
     "@babel/preset-env": "^7.12.11",
