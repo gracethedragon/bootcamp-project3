@@ -4,4 +4,5 @@
 # Dependency directories
 node_modules/
 
+# Do not commit the distribution folder compiled by Webpack
 js/dist

@@ -1,6 +1,6 @@
 import { Sequelize } from 'sequelize';
-import allConfig from '../config/config.js';
 import url from 'url';
+import allConfig from '../config/config.js';
 
 const env = process.env.NODE_ENV || 'development';
 
@@ -10,24 +10,23 @@ const db = {};
 
 let sequelize;
 
-if( env === 'production' ){
-
+if (env === 'production') {
   // break apart the Heroku database url and rebuild the configs we need
 
-  const DATABASE_URL = process.env.DATABASE_URL;
-  const db_url = url.parse(DATABASE_URL);
-  const username   = db_url.auth.substr(0, db_url.auth.indexOf(':'));
-  const password   = db_url.auth.substr(db_url.auth.indexOf(':') + 1, db_url.auth.length);
-  const dbName     = db_url.path.slice(1);
+  const { DATABASE_URL } = process.env;
+  const dbUrl = url.parse(DATABASE_URL);
+  const username = dbUrl.auth.substr(0, dbUrl.auth.indexOf(':'));
+  const password = dbUrl.auth.substr(dbUrl.auth.indexOf(':') + 1, dbUrl.auth.length);
+  const dbName = dbUrl.path.slice(1);
 
-  const host   = db_url.hostname
-  const port   = db_url.port;
+  const host = dbUrl.hostname;
+  const { port } = dbUrl;
 
   config.host = host;
   config.port = port;
 
   sequelize = new Sequelize(dbName, username, password, config);
-}else{
+} else {
   sequelize = new Sequelize(config.database, config.username, config.password, config);
 }
 
