@@ -12,7 +12,7 @@ module.exports = {
       inject: true,
       template: path.resolve(__dirname, '..', 'js', 'src', 'index.html'),
       // favicon: resolve(__dirname, '..', 'src', 'client', 'static', 'favicon.png'),
-      alwaysWriteToDisk: true
+      alwaysWriteToDisk: true,
     }),
   ],
   output: {
@@ -26,19 +26,20 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ["@babel/preset-env"]
-          }
-        }
+            presets: ['@babel/preset-env'],
+          },
+        },
       },
       {
         test: /\.scss$/,
         use: [
           MiniCssExtractPlugin.loader,
           {
-            loader: "css-loader",
+            loader: 'css-loader',
           },
-          "sass-loader"
-      ]}
+          'sass-loader',
+        ],
+      },
     ],
   },
- };
+};
