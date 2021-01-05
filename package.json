@@ -4,9 +4,10 @@
   "description": "",
   "main": ".eslintrc.js",
   "scripts": {
+    "debug": "nodemon --inspect index.mjs",
     "start": "node index.mjs",
-    "watch": "webpack --watch --config config/webpack.dev.js",
-    "build": "webpack --config config/webpack.prod.js"
+    "watch": "webpack --watch --config webpack_conf/webpack.dev.js",
+    "build": "webpack --config webpack_conf/webpack.prod.js"
   },
   "repository": {
     "type": "git",
