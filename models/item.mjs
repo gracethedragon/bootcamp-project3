@@ -1,5 +1,5 @@
 export default function itemModel(sequelize, DataTypes) {
-  return sequelize.define('Item', {
+  return sequelize.define('item', {
     id: {
       allowNull: false,
       autoIncrement: true,
@@ -20,5 +20,5 @@ export default function itemModel(sequelize, DataTypes) {
       allowNull: false,
       type: DataTypes.DATE,
     },
-  });
+  }, { underscored: true });
 }
