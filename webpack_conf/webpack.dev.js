@@ -29,7 +29,7 @@ module.exports = merge(common, {
     new HtmlWebpackPlugin({
       // name this file main, so that it does not get automatically requested as a static file
       filename: './main.html',
-      template: path.resolve(__dirname, '..', 'src', 'index.html'),
+      template: path.resolve(__dirname, '..', 'src', 'main.html'),
     }),
 
   ].filter(Boolean),

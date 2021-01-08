@@ -10,7 +10,7 @@ module.exports = merge(common, {
       // name this file main, so that it does not get automatically requested as a static file
       filename: 'main.html',
       inject: true,
-      template: path.resolve(__dirname, '..', 'src', 'index.html'),
+      template: path.resolve(__dirname, '..', 'src', 'main.html'),
       // a favicon can be included in the head. use this config to point to it
       // favicon: resolve(__dirname, '..', 'src', 'favicon.png'),
       alwaysWriteToDisk: true,
