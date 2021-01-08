@@ -1,15 +1,14 @@
+import { resolve } from 'path';
 import db from './models/index.mjs';
-import items from './controllers/items.mjs'
-import {resolve} from 'path';
+import initItemsController from './controllers/items.mjs';
 
-export default function routes( app ){
-
-  const ItemsController = items(db);
+export default function bindRoutes(app) {
+  const ItemsController = initItemsController(db);
 
   app.get('/items', ItemsController.index);
 
   // special JS page. Include the webpack index.html file
-  app.get('/home', (request,response) => {
-    response.sendFile(resolve('dist', 'main.html'))
+  app.get('/home', (request, response) => {
+    response.sendFile(resolve('dist', 'main.html'));
   });
 }
