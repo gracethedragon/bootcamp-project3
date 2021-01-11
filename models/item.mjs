@@ -1,4 +1,4 @@
-export default function itemModel(sequelize, DataTypes) {
+export default function initItemModel(sequelize, DataTypes) {
   return sequelize.define('item', {
     id: {
       allowNull: false,
