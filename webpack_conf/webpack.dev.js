@@ -3,7 +3,7 @@ const common = require('./webpack.common.js');
 const path = require('path');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const webpack = require('webpack');
+const common = require('./webpack.common.js');
 
 module.exports = merge(common, {
   entry: {
@@ -29,8 +29,8 @@ module.exports = merge(common, {
   plugins: [
     new HtmlWebpackPlugin({
       // name this file main, so that it does not get automatically requested as a static file
-      filename:'./main.html',
-      template: path.resolve(__dirname, '..', 'src', 'index.html'),
+      filename: './main.html',
+      template: path.resolve(__dirname, '..', 'src', 'main.html'),
     }),
 
   ].filter(Boolean),
