@@ -28,6 +28,10 @@ module.exports = {
     // when importing local modules without the .js extension.
     // https://github.com/airbnb/javascript/issues/2134
     'import/extensions': ['error', 'ignorePackages'],
+    // Disable dependency checking. By default, ESLint complains when we import
+    // dev dependencies such as React, even though technically React is only "used"
+    // in compilation (what we consider development) and not in production (in the client).
+    'import/no-extraneous-dependencies': 'off',
     // Disable linebreak style to prevent ESLint errors on Windows line endings
     // https://eslint.org/docs/rules/linebreak-style
     'linebreak-style': 'off',
