@@ -5,7 +5,7 @@ const common = require('./webpack.common.js');
 
 module.exports = merge(common, {
   entry: {
-    main: './src/index.jsx',
+    main: './src/index.js',
   },
   mode: 'development',
   devtool: 'inline-source-map',
