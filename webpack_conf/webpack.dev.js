@@ -10,6 +10,13 @@ module.exports = merge(common, {
   mode: 'development',
   devtool: 'inline-source-map',
   watch: true,
+  plugins: [
+    new HtmlWebpackPlugin({
+      // name this file main, so that it does not get automatically requested as a static file
+      filename: './main.html',
+      template: path.resolve(__dirname, '..', 'src', 'main.html'),
+    }),
+  ].filter(Boolean),
   module: {
     rules: [
       {
@@ -24,12 +31,4 @@ module.exports = merge(common, {
       },
     ],
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      // name this file main, so that it does not get automatically requested as a static file
-      filename: './main.html',
-      template: path.resolve(__dirname, '..', 'src', 'main.html'),
-    }),
-
-  ].filter(Boolean),
 });
