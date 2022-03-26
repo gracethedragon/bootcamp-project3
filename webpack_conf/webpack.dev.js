@@ -4,16 +4,13 @@ const { merge } = require('webpack-merge');
 const common = require('./webpack.common.js');
 
 module.exports = merge(common, {
-  entry: {
-    main: './src/index.js',
-  },
   mode: 'development',
   devtool: 'inline-source-map',
   watch: true,
   plugins: [
     new HtmlWebpackPlugin({
       // name this file main, so that it does not get automatically requested as a static file
-      filename: './main.html',
+      filename: 'main.html',
       template: path.resolve(__dirname, '..', 'src', 'main.html'),
     }),
   ].filter(Boolean),
