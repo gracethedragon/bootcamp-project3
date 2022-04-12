@@ -1,6 +1,9 @@
 import { Sequelize } from 'sequelize';
 import url from 'url';
 import allConfig from '../config/config.js';
+import initGameModel from './game.mjs';
+import initGamesuserModel from './gamesuser.mjs';
+import initUserModel from './user.mjs';
 
 const env = process.env.NODE_ENV || 'development';
 const config = allConfig[env];
@@ -27,6 +30,33 @@ if (env === 'production') {
 else {
   sequelize = new Sequelize(config.database, config.username, config.password, config);
 }
+
+db.User = initUserModel(sequelize, Sequelize.DataTypes);
+db.Game = initGameModel(sequelize, Sequelize.DataTypes);
+db.Gamesuser = initGamesuserModel(sequelize, Sequelize.DataTypes);
+
+db.User.hasMany(db.Gamesuser, {
+  as: 'pOne',
+  foreignKey: 'player_one',
+});
+
+db.User.hasMany(db.Gamesuser, {
+  as: 'pTwo',
+  foreignKey: 'player_two',
+});
+
+db.Gamesuser.belongsTo(db.User, {
+  as: 'PlayerOne',
+  foreignKey: 'player_one',
+});
+
+db.Gamesuser.belongsTo(db.User, {
+  as: 'PlayerTwo',
+  foreignKey: 'player_two',
+});
+
+db.Game.hasOne(db.Gamesuser);
+db.Gamesuser.belongsTo(db.Game);
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;

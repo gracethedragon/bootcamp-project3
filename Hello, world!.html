@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://localhost:3004/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Required meta tags -->
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="./Hello, world!_files/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <title>Hello, world!</title>
+  <link href="./Hello, world!_files/main.css" rel="stylesheet"></head>
+
+  <body>
+    <h1>Hello, players!</h1>
+    <div id="record-players">
+      <!-- <form action="/home" method="POST"> -->
+      <label for="playerOne">Player One</label>
+      <input type="text" name="playerOne" id="playerOne" autocomplete="off" required=""><br>
+      <label for="playerTwo">Player Two</label>
+      <input type="text" name="playerTwo" id="playerTwo" autocomplete="off" required=""><br>
+      <input type="submit" value="let&#39;s go!" id="playButton">
+      <!-- </form> -->
+    </div>
+    <div class="sphere"></div>
+
+    <div id="game-container">
+      <div id="game-board">
+        <div class="row">
+          <div class="column col-1"></div>
+          <div class="column col-1 hole" id="8"></div>
+          <div class="column col-1 hole" id="9"></div>
+          <div class="column col-1 hole" id="10"></div>
+          <div class="column col-1 hole" id="11"></div>
+          <div class="column col-1 hole" id="12"></div>
+          <div class="column col-1 hole" id="13"></div>
+        </div>
+        <div class="row">
+          <div class="column col-1 hole" id="7"></div>
+          <div class="column col-1"></div>
+          <div class="column col-1"></div>
+          <div class="column col-1"></div>
+          <div class="column col-1"></div>
+          <div class="column col-1"></div>
+          <div class="column col-1"></div>
+
+          <div class="column col-1 hole" id="14"></div>
+        </div>
+        <div class="row">
+          <div class="column col-1"></div>
+          <div class="column col-1 hole" id="6"></div>
+          <div class="column col-1 hole" id="5"></div>
+          <div class="column col-1 hole" id="4"></div>
+          <div class="column col-1 hole" id="3"></div>
+          <div class="column col-1 hole" id="2"></div>
+          <div class="column col-1 hole" id="1"></div>
+        </div>
+      </div>
+      <div id="playerturn"></div>
+      <div id="playername"></div>
+      <div id="announcement"></div>
+    </div>
+
+    <script src="./Hello, world!_files/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+  <script src="./Hello, world!_files/main-ed4efcbe61cb7a2826d1.bundle.js"></script>
+
+</body></html>
