@@ -39,10 +39,10 @@ export default function initUsersController(db) {
 
         },
         gamestate: {
-          // game: [7, 7, 7, 7, 7, 7, 0, 7, 7, 7, 7, 7, 7, 0],
+          game: [7, 7, 7, 7, 7, 7, 0, 7, 7, 7, 7, 7, 7, 0],
           playerOne: req.body.playerOne,
           playerTwo: req.body.playerTwo,
-          game: [1, 0, 0, 2, 0, 0, 0, 0, 2, 0, 0, 0, 0, 79],
+          // game: [1, 0, 0, 2, 0, 0, 0, 0, 2, 0, 0, 0, 0, 79],
         },
       });
 
