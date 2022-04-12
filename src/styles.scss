@@ -1,8 +1,166 @@
-.item{
-  padding:10px;
-  margin:10px;
-  border:1px solid grey;
-  width:28%;
-  display:inline-block;
-  word-wrap:break-word;
+body {
+  max-height: 95vh;
+  max-width: 100vw !important;
+  font-family: "Signika Negative", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 2vh;
+}
+
+img {
+  position: fixed;
+  z-index: -1;
+  max-width: 100vw;
+  background-size: 100% 100%;
+  left: 0px;
+  top: 0px;
+}
+
+.btn {
+  box-shadow: -3px 3px 3px 1px black;
+  background-color: wheat;
+  font-size: 14px;
+}
+h1 {
+  margin: 10px 0;
+  font-family: "Bungee Shade", cursive;
+  color: wheat;
+  font-size: 60px;
+  text-shadow: 0 0 5px black, 0 0 5px black, 0 0 5px black, 0 0 5px black;
+}
+#record-players,
+#results {
+  text-align: center;
+}
+
+input {
+  margin: 5px;
+}
+
+#game-board {
+  background-color: #704214;
+  box-shadow: -10px 10px 10px 1px black;
+  border-radius: 50px;
+  padding: 5px 5px;
+  width: 90vw;
+  margin: 6% auto;
+  max-height: 100%;
+  position: fixed;
+  left: 5%;
+  top: -3%;
+}
+#announcement {
+  text-align: center;
+  margin: auto 0;
+  color: wheat;
+  font-size: 18px;
+}
+
+#playerOneName {
+  text-align: start;
+  margin-left: 30px;
+}
+
+#playerTwoName {
+  text-align: end;
+  margin-right: 30px;
+}
+
+#results {
+  margin-top: 25%;
+}
+
+#restart {
+  position: absolute;
+  left: 40%;
+  bottom: 6px;
+  max-height: 30px;
+  line-height: 1;
+}
+#currentGameId {
+  margin-left: 3%;
+  color: wheat;
+}
+#modal {
+  position: absolute;
+  left: 3%;
+  bottom: 6px;
+  color: wheat;
+  background-color: saddlebrown;
+  max-height: 30px;
+  line-height: 1;
+}
+
+#retrieveButton {
+  position: absolute;
+  bottom: 32px;
+  left: 40%;
+}
+
+#retrieveGame {
+  bottom: 18%;
+  position: absolute;
+  left: 37%;
+}
+.row {
+  justify-content: center;
+  background-color: transparent;
+}
+.hole {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  height: 70px;
+  width: 70px;
+  background-color: white;
+  border-radius: 75px;
+  margin: 5px 5px;
+  box-shadow: -2px 5px 10px 0px black;
+}
+
+.sphere {
+  // position: fixed;
+  width: 15px;
+  height: 15px;
+  // line-height: 20px;
+
+  border: 1px solid darkslateblue;
+  border-radius: 100%;
+  box-shadow: inset 0 0 80px aquamarine;
+  color: aqua;
+}
+
+@keyframes blink {
+  0% {
+    box-shadow: 0 0 8px 8px goldenrod;
+  }
+  50% {
+    box-shadow: none;
+  }
+  100% {
+    box-shadow: 0 0 8px 8px goldenrod;
+  }
+}
+
+@-webkit-keyframes blink {
+  0% {
+    box-shadow: 0 0 8px 8px goldenrod;
+  }
+  50% {
+    box-shadow: 0 0 0 0;
+  }
+  100% {
+    box-shadow: 0 0 8px 8px goldenrod;
+  }
+}
+
+.active {
+  -webkit-animation: blink 1.5s linear infinite;
+  -moz-animation: blink 1.5s linear infinite;
+  -ms-animation: blink 1.5s linear infinite;
+  -o-animation: blink 1.5s linear infinite;
+  animation: blink 1.5s linear infinite;
 }

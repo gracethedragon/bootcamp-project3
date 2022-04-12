@@ -11,11 +11,142 @@
       integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
       crossorigin="anonymous"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Signika+Negative:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <title>Hello, world!</title>
   </head>
 
   <body>
-    <h1>Hello, world!</h1>
+    <img src="../woodbackground.jpg" alt="bg image" />
+
+    <div id="record-players">
+      <h1>Marbelous</h1>
+      <!-- <form action="/home" method="POST"> -->
+      <label for="playerOne">Player One</label><br />
+      <input
+        type="text"
+        name="playerOne"
+        id="playerOne"
+        autocomplete="off"
+        required
+      /><br />
+      <label for="">Player Two</label><br />
+      <input
+        type="text"
+        name="playerTwo"
+        id="playerTwo"
+        autocomplete="off"
+        required
+      /><br />
+      <button type="button" class="btn" id="playButton">let's go</button
+      ><br /><br />
+
+      <!-- </form> -->
+      <input
+        type="text"
+        name="retrieveGame"
+        id="retrieveGame"
+        autocomplete="off"
+      /><br />
+      <button type="button" class="btn" id="retrieveButton">
+        I've got my game id!
+      </button>
+    </div>
+
+    <div id="game-container" hidden>
+      <div class="player" id="currentGameId"></div>
+      <div id="game-board">
+        <div class="player" id="playerTwoName"></div>
+        <div class="row">
+          <div class="column col-1 hole ptwo" id="8"></div>
+          <div class="column col-1 hole ptwo" id="9"></div>
+          <div class="column col-1 hole ptwo" id="10"></div>
+          <div class="column col-1 hole ptwo" id="11"></div>
+          <div class="column col-1 hole ptwo" id="12"></div>
+          <div class="column col-1 hole ptwo" id="13"></div>
+        </div>
+        <div class="row">
+          <div class="column col-1 hole pone" id="7"></div>
+          <div class="column col-8" id="announcement"></div>
+
+          <!-- <div class="column col-1"></div>
+            <div class="column col-1"></div>
+            <div class="column col-1"></div>
+            <div class="column col-1"></div>
+            <div class="column col-1"></div> -->
+          <div class="column col-1 hole ptwo" id="14"></div>
+        </div>
+        <div class="row">
+          <div class="column col-1 hole pone" id="6"></div>
+          <div class="column col-1 hole pone" id="5"></div>
+          <div class="column col-1 hole pone" id="4"></div>
+          <div class="column col-1 hole pone" id="3"></div>
+          <div class="column col-1 hole pone" id="2"></div>
+          <div class="column col-1 hole pone" id="1"></div>
+        </div>
+        <div class="player" id="playerOneName"></div>
+      </div>
+      <button type="button" class="btn" id="restart">play another game</button>
+    </div>
+
+    <div id="results" hidden>
+      <div id="winner"></div>
+      <br />
+
+      <button type="button" class="btn" id="homeButton">
+        play another game
+      </button>
+    </div>
+    <!-- Button trigger modal -->
+    <button
+      type="button"
+      class="btn"
+      data-bs-toggle="modal"
+      data-bs-target="#exampleModal"
+      id="modal"
+    >
+      Rules
+    </button>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Rules</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <ol>
+            <li>There are 6 pits on each side of the board and 1 store for each player at their left end </li>
+            <li>Each pit contains 7 marbles</li>
+            <li>Players take turns to move marbles clockwise, dropping marbles in each pit & store except the opponent’s store </li>
+            <li>If final marble lands in the the player’s own store, the player gets to go again</li>
+            <li>If final marble lands in the player’s own pit that is empty, they get to collect all the marbles on the opposite pit and put everything in the player's own store </li>
+            <li>The game ends when one player’s pits are completely empty. The opponent adds all the marbles in their pit to their own store, and the player with the most marbles wins!</li>
+          </ol>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"

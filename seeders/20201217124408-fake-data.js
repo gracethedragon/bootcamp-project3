@@ -1,26 +1,25 @@
-const { faker } = require('@faker-js/faker');
-
 module.exports = {
   up: async (queryInterface) => {
-    const itemsList = [];
-    for (let i = 0; i < 100; i += 1) {
-      itemsList.push({
-        name: faker.commerce.product(),
-        description: faker.commerce.productDescription(),
+    // Define category data
+    const users = [
+      {
+        name: 'tim',
+        password: '12345',
         created_at: new Date(),
         updated_at: new Date(),
-      });
-    }
+      },
+      {
+        name: 'tam',
+        password: '12345',
+        created_at: new Date(),
+        updated_at: new Date(),
+      },
+    ];
 
-    try {
-      const result = await queryInterface.bulkInsert('items', itemsList);
-      console.log(result);
-    } catch (error) {
-      console.log(error);
-    }
+    queryInterface.bulkInsert('users', users);
   },
 
   down: async (queryInterface) => {
-    await queryInterface.bulkDelete('items', null, {});
+    await queryInterface.bulkDelete('users', null);
   },
 };
